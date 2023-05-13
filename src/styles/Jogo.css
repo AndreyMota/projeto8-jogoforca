@@ -1,0 +1,32 @@
+.jogo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forca {
+    width: 400px;
+    height: 466px;
+    margin-top: 59px;
+    margin-left: 38px;
+}
+
+.direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 59px;
+    margin-top: 89px;
+
+}
+
+.start {
+    width: 200px;
+    height: 60px;
+    font-weight: 700;
+}
+
+.palavra {
+    background-color: green;
+    display: flex;
+    justify-content: right;
+}

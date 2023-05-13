@@ -1,0 +1,13 @@
+.letras {
+    height: 91px;
+    width: 678px;
+    margin: 0, auto;
+    background-color: aqua;
+}
+
+.letras button{
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    margin-bottom: 11px;
+}

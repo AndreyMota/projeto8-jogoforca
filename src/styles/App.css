@@ -1,0 +1,11 @@
+.App {
+  background-color: white;  
+} 
+
+.letters {
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+
+}

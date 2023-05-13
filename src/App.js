@@ -1,10 +1,19 @@
-import './App.css';
+import { useState } from 'react';
 import Jogo from './Jogo';
+import Letras from './Letras';
+import palavras from './palavras';
+import './styles/App.css';
 
 function App() {
+  const [palavra, setPalavra] = useState('');
+  const [ocult, setOcult] = useState([]);
+  const [botoesOff, setBotoes] = useState(true);
   return (
     <div className="App">
-      <Jogo />
+      <Jogo setpal={setPalavra} palavra={palavra} ocult={ocult} setBotoes={setBotoes}/>
+      <div className='letters'>
+        <Letras palavra={palavra} ocult={ocult} setOcult={setOcult} botoesOff={botoesOff}/>
+      </div>  
     </div>
   );
 }

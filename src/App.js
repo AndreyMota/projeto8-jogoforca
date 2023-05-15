@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Jogo from './Jogo';
 import Letras from './Letras';
+import Chute from './Chute';
 
 import './styles/App.css';
 
@@ -10,6 +11,7 @@ function App() {
   const [botoesOff, setBotoes] = useState(true);
   const [erros, setErros] = useState(0);
   const [classeP, setClasseP] = useState('palavra')
+  const [valorC, setValorC] = useState('');
   
   return (
     <div className="App"> 
@@ -37,6 +39,19 @@ function App() {
         setClasseP={setClasseP}
         />
       </div>  
+      <div>
+        <Chute
+        botoesOff={botoesOff} 
+        setBotoes={setBotoes}
+        valorC={valorC}
+        setValorC={setValorC}
+        palavra={palavra}
+        classeP={classeP}
+        setClasseP={setClasseP}
+        ocult={ocult}
+        setOcult={setOcult}
+        setErros={setErros}/>
+      </div>
     </div>
   );
 }

@@ -2,10 +2,13 @@
     height: 91px;
     width: 678px;
     margin: 0, auto;
-    background-color: aqua;
 }
 
 .letras button{
+    background-color: #E1ECF4;
+    color: #39739D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
     width: 40px;
     height: 40px;
     margin-right: 12px;

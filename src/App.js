@@ -9,6 +9,7 @@ function App() {
   const [ocult, setOcult] = useState([]);
   const [botoesOff, setBotoes] = useState(true);
   const [erros, setErros] = useState(0);
+  const [classeP, setClasseP] = useState('palavra')
   
   return (
     <div className="App"> 
@@ -19,15 +20,21 @@ function App() {
       setOcult={setOcult}
       setBotoes={setBotoes}
       erros={erros}
+      setErros={setErros}
+      classeP={classeP}
+      setClasseP={setClasseP}
       />
       <div className='letters'>
         <Letras 
         palavra={palavra} 
         ocult={ocult} 
         setOcult={setOcult} 
+        setBotoes={setBotoes}
         botoesOff={botoesOff}
         erros={erros}
         setErros={setErros}
+        classeP={classeP}
+        setClasseP={setClasseP}
         />
       </div>  
     </div>

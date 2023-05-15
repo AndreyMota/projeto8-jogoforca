@@ -10,21 +10,21 @@ import palavras from './palavras';
 //import { useState } from 'react';
 
 
-export default function Jogo({setpal, palavra, ocult, setOcult, setBotoes, erros}) {
+export default function Jogo({setpal, palavra, ocult, setOcult, setBotoes, erros, setErros, setClasseP, classeP}) {
     const forcas = [forcaZero, forcaUm, forcaDois, forcaTres, forcaQuatro, forcaCinco, forcaSeis];
       
     return (
         <div className='jogo'>
             <img className='forca' src={forcas[erros]}></img>
             <div className='direita'>
-                <Start setpal={setpal} setBotoes={setBotoes} setOcult={setOcult}/>
-                <Palavra ocult={ocult}/>
+                <Start setpal={setpal} setBotoes={setBotoes} setOcult={setOcult} setErros={setErros} setClasseP={setClasseP}/>
+                <Palavra ocult={ocult} classeP={classeP}/>
             </div>
         </div>
     )
 }
 
-function Start({ setpal, setBotoes, setOcult }) {
+function Start({ setpal, setBotoes, setOcult, setErros, setClasseP }) {
     const radom = (max, min) => { 
         let valor = Math.random() * (max - min) + min
         return Math.floor(valor)
@@ -33,6 +33,8 @@ function Start({ setpal, setBotoes, setOcult }) {
     //console.log(radom(options.length,0))
 
     function apertou() {
+        setErros(0)
+        setClasseP('palavra ')
         const pau = palavras[radom(palavras.length -1, 0)]
         const lst = pau.split('');
         const lst2 = []
@@ -50,9 +52,9 @@ function Start({ setpal, setBotoes, setOcult }) {
 }
 
 
-function Palavra({ ocult }) {
+function Palavra({ ocult, classeP }) {
     return (
-        <div className='palavra'>
+        <div className={classeP}>
             {ocult.map(x => <div>{x}</div>)}
             {/* <h1>{ocult.map(x => <p>{x}</p>)}</h1> */}
         </div>

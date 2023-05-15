@@ -1,8 +1,19 @@
 import './styles/Letras.css'
 
-export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff, erros, setErros}) {
+export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff, erros, setErros, classeP, setClasseP}) {
     const alfabeto = "abcdefghijklmnopqrstuvwxyz".split('');
-    console.log(`erros primeiro: ${erros}`);
+    //console.log(`erros primeiro: ${erros}`);
+    function acabou(venceu) {
+        setBotoes(true);
+        if (venceu) {
+            const nova = classeP + ' ganhou';
+            setClasseP(nova);
+        }
+        if (!venceu) {
+            const nova = classeP + ' perdeu';
+            setClasseP(nova);
+        }
+    }
     
     function botaumLetra(event, l, y) {
         event.target.disabled = true;
@@ -22,13 +33,27 @@ export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff,
                     pos = c+1;
                 }
             }
-            
+            let uia = '';
+            lst.forEach((x) => uia+=x);
+            /* console.log(`lst: ${uia}`);
+            console.log(`pal: ${palavra}`); */
+            if (uia === palavra) {
+                acabou(true);
+            }
             setOcult(lst);
         }
 
         else {
             console.log(`erros segundo: ${erros}`);
-            setErros(erros=erros+1);
+            const novo = erros+1;
+            setErros(novo);
+            if (novo > 5) {
+                let uia = [];
+                let lst = palavra.split('');
+                uia = [...lst];
+                setOcult(uia);
+                acabou(false);
+            }
             console.log(`erros terceiro: ${erros}`);
             //alert("Não tem essa letra");
         }

@@ -26,10 +26,18 @@
 }
 
 .palavra {
-    background-color: green;
+    /* background-color: green; */
     display: flex;
     justify-content: right;
     font-size: 50px;  
+}
+
+.ganhou {
+    color: green;
+}
+
+.perdeu {
+    color: red;
 }
 
 .palavra div{

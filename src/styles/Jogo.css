@@ -29,4 +29,9 @@
     background-color: green;
     display: flex;
     justify-content: right;
+    font-size: 50px;  
 }
+
+.palavra div{
+    margin-left: 10px;
+} 

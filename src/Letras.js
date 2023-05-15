@@ -63,7 +63,7 @@ export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff,
     console.log(botoesOff);
     return (
         <div className="letras">
-            {alfabeto.map((x) => <button disabled={botoesOff} onClick={(event) => botaumLetra(event, x, this)}>{x}</button>)}
+            {alfabeto.map((x) => <button data-test="letter" disabled={botoesOff} onClick={(event) => botaumLetra(event, x, this)}>{x}</button>)}
         </div>
     )
 }  

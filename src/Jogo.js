@@ -15,7 +15,7 @@ export default function Jogo({setpal, palavra, ocult, setOcult, setBotoes, erros
       
     return (
         <div className='jogo'>
-            <img className='forca' src={forcas[erros]}></img>
+            <img data-test="game-image" className='forca' src={forcas[erros]}></img>
             <div className='direita'>
                 <Start setpal={setpal} setBotoes={setBotoes} setOcult={setOcult} setErros={setErros} setClasseP={setClasseP}/>
                 <Palavra ocult={ocult} classeP={classeP}/>
@@ -47,14 +47,14 @@ function Start({ setpal, setBotoes, setOcult, setErros, setClasseP }) {
         console.log("Botão inicial acionado");
     }
     return (
-        <button className="start" onClick={apertou}>Escolher palavra</button>
+        <button data-test="choose-word" className="start" onClick={apertou}>Escolher palavra</button>
     )
 }
 
 
 function Palavra({ ocult, classeP }) {
     return (
-        <div className={classeP}>
+        <div data-test="word" className={classeP}>
             {ocult.map(x => <div>{x}</div>)}
             {/* <h1>{ocult.map(x => <p>{x}</p>)}</h1> */}
         </div>

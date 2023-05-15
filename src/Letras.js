@@ -1,12 +1,11 @@
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 import './styles/Letras.css'
 
-export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff}) {
+export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff, erros, setErros}) {
     const alfabeto = "abcdefghijklmnopqrstuvwxyz".split('');
-
+    console.log(`erros primeiro: ${erros}`);
+    
     function botaumLetra(event, l, y) {
         event.target.disabled = true;
-        console.log(y);
         if (palavra.includes(l)) {
             let lst = [...ocult];
             let pos = 0;
@@ -26,9 +25,12 @@ export default function Letras({ palavra, ocult, setOcult, setBotoes, botoesOff}
             
             setOcult(lst);
         }
-        
+
         else {
-            alert("Não tem essa letra");
+            console.log(`erros segundo: ${erros}`);
+            setErros(erros=erros+1);
+            console.log(`erros terceiro: ${erros}`);
+            //alert("Não tem essa letra");
         }
     }
         

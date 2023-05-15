@@ -1,15 +1,24 @@
-import forcaZero from './assets/forca0.png';
 import './styles/Jogo.css';
+import forcaZero from './assets/forca0.png';
+import forcaUm from './assets/forca1.png';
+import forcaDois from './assets/forca2.png';
+import forcaTres from './assets/forca3.png';
+import forcaQuatro from './assets/forca4.png';
+import forcaCinco from './assets/forca5.png';
+import forcaSeis from './assets/forca6.png';
 import palavras from './palavras';
+//import { useState } from 'react';
 
 
-export default function Jogo(props) {
+export default function Jogo({setpal, palavra, ocult, setOcult, setBotoes, erros}) {
+    const forcas = [forcaZero, forcaUm, forcaDois, forcaTres, forcaQuatro, forcaCinco, forcaSeis];
+      
     return (
         <div className='jogo'>
-            <img className='forca' src={forcaZero}></img>
+            <img className='forca' src={forcas[erros]}></img>
             <div className='direita'>
-                <Start setpal={props.setpal} setBotoes={props.setBotoes} setOcult={props.setOcult}/>
-                <Palavra ocult={props.ocult}/>
+                <Start setpal={setpal} setBotoes={setBotoes} setOcult={setOcult}/>
+                <Palavra ocult={ocult}/>
             </div>
         </div>
     )
